@@ -10,7 +10,7 @@ function Demo() {
 
     return (
         <VStack>
-            <p>Count: {count}</p>
+            <p>Count : {count}</p>
             <Button onClick={() => dispatch(increment())}>Add</Button>
             <Button onClick={() => dispatch(decrement())}>Remove</Button>
         </VStack>
