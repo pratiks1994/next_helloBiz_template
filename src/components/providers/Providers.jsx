@@ -2,12 +2,15 @@
 import React from "react";
 import { Provider } from "../ui/provider";
 import StoreProvider from "./ReduxStoreProvider";
+import AuthProvider from "./AuthProvider";
 
 function Providers({ children }) {
     return (
-        <StoreProvider>
-            <Provider>{children}</Provider>
-        </StoreProvider>
+        <AuthProvider>
+            <StoreProvider>
+                <Provider>{children}</Provider>
+            </StoreProvider>
+        </AuthProvider>
     );
 }
 
