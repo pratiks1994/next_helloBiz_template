@@ -3,9 +3,12 @@
 import { signIn, signOut } from "@/auth";
 
 export async function githubSignIn() {
-    return await signIn();
+    await signIn();
 }
 
 export const githubSignOut = async () => {
-    await signOut();
+    return await signOut({
+        redirect: true,
+        redirectTo: "/",
+    });
 };

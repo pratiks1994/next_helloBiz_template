@@ -1,11 +1,10 @@
 "use client";
-import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
-import { useSession } from "next-auth/react";
-import { decrement, increment, addbyTen, customAdd, reset } from "@/app/lib/slices/countSlice";
-import { Button, HStack, VStack } from "@chakra-ui/react";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+
+import { decrement, increment, addbyTen, customAdd, reset } from "@/lib/slices/countSlice";
+import { Button, VStack } from "@chakra-ui/react";
 import React from "react";
-import { githubSignIn, githubSignOut } from "@/app/actions/signIn";
-import { redirect } from "next/navigation";
+import { githubSignOut } from "@/app/actions/signIn";
 
 function Demo() {
     const count = useAppSelector((state) => state.count);
@@ -14,19 +13,30 @@ function Demo() {
     return (
         <VStack>
             <p>Count : {count}</p>
-            <Button onClick={() => dispatch(increment())}>Add</Button>
-            <Button onClick={() => dispatch(decrement())}>Remove</Button>
-            <Button onClick={() => dispatch(addbyTen())}>Add</Button>
-            <Button onClick={() => dispatch(reset())}>Reset</Button>
+            <Button colorPalette={"teal"} variant="solid" onClick={() => dispatch(increment())}>
+                Add
+            </Button>
+            <Button colorPalette={"teal"} variant="ghost" onClick={() => dispatch(increment())}>
+                Add
+            </Button>
+            <Button size={"sm"} variant={"ghost"} onClick={() => dispatch(decrement())}>
+                Remove
+            </Button>
+            <Button size={"sm"} variant={"outline"} onClick={() => dispatch(addbyTen())}>
+                Add
+            </Button>
+            <Button size="sm" onClick={() => dispatch(reset())}>
+                Reset
+            </Button>
             <Button onClick={() => dispatch(customAdd(100))}>Add 100</Button>
             <Button
                 onClick={async () => {
                     await githubSignOut();
-                    redirect("/");
                 }}
             >
                 Sign Out
             </Button>
+            <button> red</button>
         </VStack>
     );
 }

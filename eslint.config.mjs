@@ -21,9 +21,19 @@ const eslintConfig = [
                 },
             },
         },
+        settings: {
+            "import/resolver": {
+                alias: {
+                    map: [["@", "./src"]],
+                    extensions: [".js", ".jsx", ".ts", ".tsx"],
+                },
+            },
+        },
         rules: {
             "no-undef": "error",
             "no-unused-vars": "warn",
+            "import/no-unresolved": "error", // Ensure imported modules exist
+            "react/jsx-no-undef": "error", // Ensure components are imported
         },
         linterOptions: {
             reportUnusedDisableDirectives: true,
