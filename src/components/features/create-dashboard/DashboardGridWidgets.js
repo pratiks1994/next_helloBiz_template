@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+
 import ResponsiveGridLayout from "@/components/ui/grid/ResponsiveGridLayout";
 import BoxContainer from "@/components/ui/BoxContainer";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,8 +11,7 @@ import BarChartWidget from "./BarChartWidget";
 import PieChartWidget from "./PieChartWidget";
 import DataTableWidget from "./DataTableWidget";
 import EmptyWidgets from "./EmptyDashbord";
-import LayoutChangeAction from "./LayoutChangeAction";
-import { toaster } from "@/components/ui/toaster";
+
 const WIDGET_COMPONENTS = {
     [widgetTypes.KPI]: KpiWidget,
     [widgetTypes.BAR_CHART]: BarChartWidget,
@@ -45,8 +44,8 @@ function DashboardGridWidgets({ allowChangeLayout = false }) {
                         <BoxContainer
                             key={widget.id}
                             overflow="hidden"
-                            border={allowChangeLayout ? "1px solid" : "none"}
-                            borderColor="border"
+                            outline={allowChangeLayout ? "1px solid" : "none"}
+                            outlineColor="border.emphasized"
                         >
                             <WidgetComponent widget={widget} />
                         </BoxContainer>

@@ -14,6 +14,7 @@ function AddBarChartPage() {
                 <BackIconButton as={Link} href={routes.create_dashboard} />
                 Bar Chart
             </CreateDashboardHeading>
+
             <Divider />
             <AddBarChartForm />
         </BoxContainer>

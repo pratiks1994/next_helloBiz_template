@@ -46,9 +46,11 @@ function Dashboards() {
                     </FlexContainer>
                 </CardRoot>
             </BoxContainer>
+
             <GridContainer py="2" gap="4">
                 <DashboardsList dashboards={currentPageDashboards} />
             </GridContainer>
+
             <PaginationRoot page={page} onPageChange={handlePageChange} count={totalItems} pageSize={pageSize} defaultPage={1} py="2">
                 <HStack>
                     <PaginationPageText format="long" flex="1" fontSize="sm" color="fg.muted" />

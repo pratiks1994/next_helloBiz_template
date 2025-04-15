@@ -11,9 +11,6 @@ const itemCounts = createListCollection({
         { label: 15, value: 15 },
         { label: 20, value: 20 },
         { label: 25, value: 25 },
-        // { label: 15, value: 15 },
-        // { label: 18, value: 18 },
-        // { label: 21, value: 21 },
     ],
 });
 

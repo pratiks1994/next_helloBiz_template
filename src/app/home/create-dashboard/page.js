@@ -20,6 +20,7 @@ const widgets = [
         icon: <FaChartPie />,
         href: routes.add_pie_chart,
     },
+
     {
         name: "Bar Chart",
         icon: <FaChartBar />,
