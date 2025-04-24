@@ -14,7 +14,7 @@ export const DashboardCardAction = () => {
     return (
         <MenuRoot>
             <MenuTrigger asChild>
-                <ButtonIcon size="md" h="20px" variant="ghost" colorPalette="gray">
+                <ButtonIcon size="md" h="20px" variant="ghost" colorPalette="gray" aria-label="Dashboard Actions">
                     <Icon>
                         <BsThreeDots />
                     </Icon>
@@ -22,7 +22,7 @@ export const DashboardCardAction = () => {
             </MenuTrigger>
             <MenuContent>
                 <MenuItem asChild value="view">
-                    <Link href={routes.view_dashboard}>
+                    <Link href={routes.view_dashboard} aria-label="View Dashboard">
                         <FlexContainer gap="2" alignItems="center">
                             <FaEye />
                             <Text>View </Text>
@@ -30,7 +30,7 @@ export const DashboardCardAction = () => {
                     </Link>
                 </MenuItem>
                 <MenuItem asChild value="edit">
-                    <Link href={routes.create_dashboard}>
+                    <Link href={routes.create_dashboard} aria-label="Edit Dashboard">
                         <FlexContainer gap="2" alignItems="center">
                             <FaRegEdit />
                             <Text>Edit </Text>
@@ -38,7 +38,7 @@ export const DashboardCardAction = () => {
                     </Link>
                 </MenuItem>
                 <MenuItem color="fg.error" _hover={{ bg: "bg.error", color: "fg.error" }} asChild value="delete">
-                    <Link href="#">
+                    <Link href="#" aria-label="Delete Dashboard">
                         <FlexContainer gap="2" alignItems="center">
                             <IoTrashOutline />
                             <Text>Delete </Text>

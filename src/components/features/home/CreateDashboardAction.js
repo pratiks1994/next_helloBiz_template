@@ -9,7 +9,7 @@ function CreateDashboardAction() {
         <>
             <DialogRoot size="xs" placement="center">
                 <DialogTrigger asChild>
-                    <Button size="sm">
+                    <Button size="sm" aria-label="Create Dashboard">
                         <Icon>
                             <FaPlus />
                         </Icon>

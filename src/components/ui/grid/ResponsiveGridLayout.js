@@ -10,7 +10,7 @@ const DEFAULT_PROPS = {
     breakpoints: { lg: 768, sm: 0 },
     cols: { lg: 24, sm: 24 },
 
-    // useCSSTransforms: true,
+    useCSSTransforms: true,
     compactType: "vertical",
     containerPadding: [0, 20],
 };

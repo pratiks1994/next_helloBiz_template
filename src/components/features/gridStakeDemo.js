@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "gridstack/dist/gridstack-extra.css";
-import "gridstack/dist/gridstack.css";
+// import "gridstack/dist/gridstack-extra.css";
+// import "gridstack/dist/gridstack.css";
 import "./demo.css";
 import Demo from "./Demo";
 import { GridStackProvider } from "@/lib/grid-stack/grid-stack-provider";

@@ -21,13 +21,13 @@ function PageItemCountSelector({ value, onChange }) {
                 Items
             </Text>
             <SelectRoot collection={itemCounts} size="xs" width={14} value={value} defaultValue={[9]} onValueChange={onChange}>
-                <SelectTrigger>
+                <SelectTrigger aria-label="Items per page">
                     <SelectValueText placeholder="" />
                 </SelectTrigger>
                 <SelectContent portalled={false}>
-                    {itemCounts.items.map((movie) => (
-                        <SelectItem item={movie} key={movie.value}>
-                            {movie.label}
+                    {itemCounts.items.map((item) => (
+                        <SelectItem item={item} key={item.value} aria-label={item.label}>
+                            {item.label}
                         </SelectItem>
                     ))}
                 </SelectContent>

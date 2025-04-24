@@ -1,5 +1,8 @@
 import { GridStack } from "gridstack";
 import React, { createRef, useEffect, useRef, useState } from "react";
+import "gridstack/dist/gridstack-extra.css";
+import "gridstack/dist/gridstack.css";
+import "./demo.css";
 import { GridItem } from "./GridItems";
 
 export const ControlledStack = () => {
@@ -32,31 +35,31 @@ export const ControlledStack = () => {
         grid.batchUpdate(false);
     }, [items]);
 
-    useEffect(() => {
-        const grid = gridRef.current;
-        if (grid) {
-            grid.on("resizestop", (event, element) => {
-                const id = element.getAttribute("gs-id");
-                const width = element.getAttribute("gs-w");
-                const height = element.getAttribute("gs-h");
+    // useEffect(() => {
+    //     const grid = gridRef.current;
+    //     if (grid) {
+    //         grid.on("resizestop", (event, element) => {
+    //             const id = element.getAttribute("gs-id");
+    //             const width = element.getAttribute("gs-w");
+    //             const height = element.getAttribute("gs-h");
+    //             setItems((prevItems) => prevItems.map((item) => (item.id === id ? { ...item, width, height } : item)));
+    //         });
+    //         grid.on("dragstop", (event, element) => {
+    //             console.log("dragstop", event, element);
+    //             const id = element.getAttribute("gs-id");
+    //             const x = element.getAttribute("gs-x");
+    //             const y = element.getAttribute("gs-y");
+    //             setItems((prevItems) => prevItems.map((item) => (item.id === id ? { ...item, x, y } : item)));
+    //         });
+    //     }
 
-                setItems((prevItems) => prevItems.map((item) => (item.id === id ? { ...item, width, height } : item)));
-            });
-            grid.on("dragstop", (event, element) => {
-                const id = element.getAttribute("gs-id");
-                const x = element.getAttribute("gs-x");
-                const y = element.getAttribute("gs-y");
-                setItems((prevItems) => prevItems.map((item) => (item.id === id ? { ...item, x, y } : item)));
-            });
-        }
-
-        return () => {
-            if (grid) {
-                grid.off("resizestop");
-                grid.off("dragstop");
-            }
-        };
-    }, []);
+    //     return () => {
+    //         if (grid) {
+    //             grid.off("resizestop");
+    //             grid.off("dragstop");
+    //         }
+    //     };
+    // }, []);
 
     const addChart = (chartType, size = {}) => {
         setItems((prevItems) => {
@@ -95,9 +98,7 @@ export const ControlledStack = () => {
             <div className="controlled grid-stack">
                 {items.map((item) => (
                     <div key={item.id} ref={(el) => refs.current.set(item.id, { current: el })} className="grid-stack-item">
-                        <div className="grid-stack-item-content">
-                            <GridItem id={item.id} chartType={item.chartType} />
-                        </div>
+                        <div className="grid-stack-item-content">{JSON.stringify(item, null, 2)}</div>
                     </div>
                 ))}
             </div>
